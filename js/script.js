@@ -6,7 +6,26 @@
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 
-const km = prompt("quanti km vuoi percorrere?")
-const numeric_km = parseInt(km)
-const age = prompt("quanti anni hai?")
-const numeric_age = parseInt(age)
+let km = prompt("quanti km vuoi percorrere?");
+let numeric_km = parseInt(km);
+let age = prompt("quanti anni hai?");
+let numeric_age = parseInt(age);
+const price_per_km = 0.21
+
+const prezzo = numeric_km * price_per_km
+console.log(prezzo)
+// let sconto_20 = (Math.round(prezzo - (prezzo * 20) / 100).toFixed(2))
+
+let sconto_20 = (Math.round(prezzo * 20) / 100).toFixed(2);
+let sconto_40 = (Math.round(prezzo - (prezzo * 40) / 100).toFixed(2))
+if (numeric_age > 65){
+    document.getElementById("ticket").innerHTML = sconto_40
+}else if (numeric_age < 18){
+    document.getElementById("ticket").innerHTML = prezzo - sconto_20
+    
+}else {
+    document.getElementById("ticket").innerHTML = prezzo
+}
+
+
+
