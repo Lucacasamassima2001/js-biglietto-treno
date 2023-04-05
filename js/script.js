@@ -16,12 +16,12 @@ const prezzo = numeric_km * price_per_km
 console.log(prezzo)
 // let sconto_20 = (Math.round(prezzo - (prezzo * 20) / 100).toFixed(2))
 
-let sconto_20 = (Math.round(prezzo * 20) / 100).toFixed(2);
-let sconto_40 = (Math.round(prezzo - (prezzo * 40) / 100).toFixed(2))
+let sconto_20 = (prezzo - (prezzo * 20) / 100).toFixed(2);
+let sconto_40 = (prezzo - (prezzo * 40) / 100).toFixed(2);
 if (numeric_age > 65){
     document.getElementById("ticket").innerHTML = sconto_40
 }else if (numeric_age < 18){
-    document.getElementById("ticket").innerHTML = prezzo - sconto_20
+    document.getElementById("ticket").innerHTML = sconto_20
     
 }else {
     document.getElementById("ticket").innerHTML = prezzo
